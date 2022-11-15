@@ -14,9 +14,6 @@ class AppDecoration {
   static BoxDecoration get fillBlue800 => BoxDecoration(
         color: ColorConstant.blue800,
       );
-  static BoxDecoration get fillBlue6007e => BoxDecoration(
-        color: ColorConstant.blue6007e,
-      );
   static BoxDecoration get fillWhiteA700 => BoxDecoration(
         color: ColorConstant.whiteA700,
       );

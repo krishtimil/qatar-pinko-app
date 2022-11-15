@@ -8,7 +8,7 @@ class MainMenuController extends GetxController {
   void onReady() {
     super.onReady();
     Future.delayed(const Duration(milliseconds: 3000), () {
-      Get.toNamed(AppRoutes.teamChoosingOneScreen);
+// TODO: implement Actions
     });
   }
 

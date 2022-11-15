@@ -1,11 +1,11 @@
-import '../gameplay_two_screen/widgets/gameplay_two_item_widget.dart';
-import 'controller/gameplay_two_controller.dart';
+import '../result_screen/widgets/gameplay_two_item_widget.dart';
+import 'controller/result_controller.dart';
 import 'models/gameplay_two_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:qatar_pinko_cup/core/app_export.dart';
 import 'package:qatar_pinko_cup/widgets/custom_button.dart';
 
-class GameplayTwoScreen extends GetWidget<GameplayTwoController> {
+class ResultScreen extends GetWidget<ResultController> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -76,11 +76,11 @@ class GameplayTwoScreen extends GetWidget<GameplayTwoController> {
                                     () => ListView.builder(
                                       physics: BouncingScrollPhysics(),
                                       shrinkWrap: true,
-                                      itemCount: controller.gameplayTwoModelObj
-                                          .value.gameplayTwoItemList.length,
+                                      itemCount: controller.resultModelObj.value
+                                          .gameplayTwoItemList.length,
                                       itemBuilder: (context, index) {
                                         GameplayTwoItemModel model = controller
-                                            .gameplayTwoModelObj
+                                            .resultModelObj
                                             .value
                                             .gameplayTwoItemList[index];
                                         return GameplayTwoItemWidget(

@@ -1,4 +1,4 @@
-import '../controller/gameplay_one_controller.dart';
+import '../controller/gameplay_controller.dart';
 import '../models/gameplay_one_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:qatar_pinko_cup/core/app_export.dart';
@@ -9,7 +9,7 @@ class GameplayOneItemWidget extends StatelessWidget {
 
   GameplayOneItemModel gameplayOneItemModelObj;
 
-  var controller = Get.find<GameplayOneController>();
+  var controller = Get.find<GameplayController>();
 
   @override
   Widget build(BuildContext context) {

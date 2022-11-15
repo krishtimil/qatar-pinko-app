@@ -38,7 +38,7 @@ class AppbarStack extends StatelessWidget {
                   ),
                   child: InkWell(
                     onTap: () {
-                      onTapImgArrowleft();
+                      //onTapImgArrowleft();
                     },
                     child: CommonImageView(
                       svgPath: ImageConstant.imgArrowleft,
