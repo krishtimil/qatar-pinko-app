@@ -15,47 +15,49 @@ class GridellipsethreeItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.centerLeft,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Align(
-            alignment: Alignment.centerLeft,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(
-                getHorizontalSize(
-                  30.00,
+    return Container(
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(
+                  getHorizontalSize(
+                    30.00,
+                  ),
+                ),
+                child: CommonImageView(
+                  imagePath: ImageConstant.imgEllipse3,
+                  height: getSize(
+                    60.00,
+                  ),
+                  width: getSize(
+                    60.00,
+                  ),
+                  fit: BoxFit.cover,
                 ),
               ),
-              child: CommonImageView(
-                imagePath: ImageConstant.imgEllipse3,
-                height: getSize(
-                  60.00,
-                ),
-                width: getSize(
-                  60.00,
-                ),
-                fit: BoxFit.cover,
+            ),
+            Padding(
+              padding: getPadding(
+                left: 10,
+                top: 9,
+                right: 10,
+              ),
+              child: Text(
+                "lbl_qatar".tr,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.left,
+                style: AppStyle.txtJosefinSansRomanRegular14,
               ),
             ),
-          ),
-          Padding(
-            padding: getPadding(
-              left: 10,
-              top: 9,
-              right: 10,
-            ),
-            child: Text(
-              "lbl_qatar".tr,
-              overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.left,
-              style: AppStyle.txtJosefinSansRomanRegular14,
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
