@@ -12,6 +12,8 @@ import 'package:qatar_pinko_cup/widgets/app_bar/appbar_title.dart';
 import 'package:qatar_pinko_cup/widgets/app_bar/custom_app_bar.dart';
 
 class TeamChoosingOneScreen extends GetWidget<TeamChoosingOneController> {
+
+  
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -96,7 +98,7 @@ class TeamChoosingOneScreen extends GetWidget<TeamChoosingOneController> {
                                           MainAxisAlignment.start,
                                       children: [
                                         GestureDetector(
-                                          onTap:() =>  Navigator.pushNamed(context, AppRoutes.gameplayScreen),
+                                          onTap:() =>  Navigator.pushNamed(context, AppRoutes.betScreen),
                                           child: Padding(
                                             padding: getPadding(
                                               left: 94,
@@ -192,17 +194,19 @@ class TeamChoosingOneScreen extends GetWidget<TeamChoosingOneController> {
                                                         .gridellipsethreeItemList[index];
 
                                                 print("flag : $index");
-                                                return GridellipsethreeItemWidget(
-                                                    model,
-                                                    CountryModel(
-                                                        logo: CountriesInfo
-                                                            .countriesInfo[
-                                                                '${index.toString()}']!
-                                                            .logo,
-                                                        name: CountriesInfo
-                                                            .countriesInfo[
-                                                                '${index.toString()}']!
-                                                            .name));
+                                                return GestureDetector(
+                                                  child: GridellipsethreeItemWidget(
+                                                      model,
+                                                      CountryModel(
+                                                          logo: CountriesInfo
+                                                              .countriesInfo[
+                                                                  '${index.toString()}']!
+                                                              .logo,
+                                                          name: CountriesInfo
+                                                              .countriesInfo[
+                                                                  '${index.toString()}']!
+                                                              .name)),
+                                                );
                                               },
                                             ),
                                           ),
