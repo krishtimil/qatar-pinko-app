@@ -88,6 +88,7 @@ class MainMenuScreen extends GetWidget<MainMenuController> {
                                                 width: getHorizontalSize(
                                                     242.00)))),
                                     CustomButton(
+                                      onTap: () => Navigator.pushNamed(context, AppRoutes.teamChoosingOneScreen),
                                         width: 277,
                                         text: "lbl_start_game".tr,
                                         margin: getMargin(
