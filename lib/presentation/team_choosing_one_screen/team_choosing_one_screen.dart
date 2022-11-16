@@ -1,3 +1,7 @@
+import 'package:qatar_pinko_cup/data/models/country_model/country_model.dart';
+import 'package:qatar_pinko_cup/data/raw_data/countries_info.dart';
+import 'package:qatar_pinko_cup/presentation/main_menu_screen/main_menu_screen.dart';
+
 import '../team_choosing_one_screen/widgets/gridellipsethree_item_widget.dart';
 import 'controller/team_choosing_one_controller.dart';
 import 'models/gridellipsethree_item_model.dart';
@@ -72,37 +76,45 @@ class TeamChoosingOneScreen extends GetWidget<TeamChoosingOneController> {
                           child: Stack(
                             alignment: Alignment.topLeft,
                             children: [
-                              Align(
-                                alignment: Alignment.bottomCenter,
-                                child: Container(
-                                  margin: getMargin(
-                                    left: 15,
-                                    top: 10,
-                                    right: 15,
-                                  ),
-                                  decoration: AppDecoration.fillBlue6007e,
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: getPadding(
-                                          left: 94,
-                                          top: 25,
-                                          right: 94,
-                                          bottom: 26,
+                              GestureDetector(
+                                onTap: () => Navigator.pushNamed(
+                                    context, AppRoutes.mainMenuScreen),
+                                child: Align(
+                                  alignment: Alignment.bottomCenter,
+                                  child: Container(
+                                    margin: getMargin(
+                                      left: 15,
+                                      top: 10,
+                                      right: 15,
+                                    ),
+                                    decoration: AppDecoration.fillBlue6007e,
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        GestureDetector(
+                                          onTap:() =>  Navigator.pushNamed(context, AppRoutes.gameplayScreen),
+                                          child: Padding(
+                                            padding: getPadding(
+                                              left: 94,
+                                              top: 25,
+                                              right: 94,
+                                              bottom: 26,
+                                            ),
+                                            child: Text(
+                                              "lbl_next_step".tr,
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style: AppStyle
+                                                  .txtJosefinSansRomanSemiBold16WhiteA700,
+                                            ),
+                                          ),
                                         ),
-                                        child: Text(
-                                          "lbl_next_step".tr,
-                                          overflow: TextOverflow.ellipsis,
-                                          textAlign: TextAlign.left,
-                                          style: AppStyle
-                                              .txtJosefinSansRomanSemiBold16WhiteA700,
-                                        ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
@@ -136,110 +148,67 @@ class TeamChoosingOneScreen extends GetWidget<TeamChoosingOneController> {
                                     left: 25,
                                     top: 10,
                                     right: 25,
-                                    bottom: 9,
+                                    bottom: 90,
                                   ),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Align(
-                                        alignment: Alignment.centerLeft,
-                                        child: Obx(
-                                          () => GridView.builder(
-                                            shrinkWrap: true,
-                                            gridDelegate:
-                                                SliverGridDelegateWithFixedCrossAxisCount(
-                                              mainAxisExtent: getVerticalSize(
-                                                84.00,
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Align(
+                                          alignment: Alignment.centerLeft,
+                                          child: Obx(
+                                            () => GridView.builder(
+                                              shrinkWrap: true,
+                                              gridDelegate:
+                                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                                mainAxisExtent: getVerticalSize(
+                                                  84.00,
+                                                ),
+                                                crossAxisCount: 2,
+                                                mainAxisSpacing:
+                                                    getHorizontalSize(
+                                                  77.00,
+                                                ),
+                                                crossAxisSpacing:
+                                                    getHorizontalSize(
+                                                  77.00,
+                                                ),
                                               ),
-                                              crossAxisCount: 2,
-                                              mainAxisSpacing:
-                                                  getHorizontalSize(
-                                                77.00,
-                                              ),
-                                              crossAxisSpacing:
-                                                  getHorizontalSize(
-                                                77.00,
-                                              ),
+                                              physics: BouncingScrollPhysics(),
+                                              itemCount: controller
+                                                  .teamChoosingOneModelObj
+                                                  .value
+                                                  .gridellipsethreeItemList
+                                                  .length,
+                                              itemBuilder: (context, index) {
+                                                GridellipsethreeItemModel
+                                                    model = controller
+                                                        .teamChoosingOneModelObj
+                                                        .value
+                                                        .gridellipsethreeItemList[index];
+
+                                                print("flag : $index");
+                                                return GridellipsethreeItemWidget(
+                                                    model,
+                                                    CountryModel(
+                                                        logo: CountriesInfo
+                                                            .countriesInfo[
+                                                                '${index.toString()}']!
+                                                            .logo,
+                                                        name: CountriesInfo
+                                                            .countriesInfo[
+                                                                '${index.toString()}']!
+                                                            .name));
+                                              },
                                             ),
-                                            physics: BouncingScrollPhysics(),
-                                            itemCount: controller
-                                                .teamChoosingOneModelObj
-                                                .value
-                                                .gridellipsethreeItemList
-                                                .length,
-                                            itemBuilder: (context, index) {
-                                              GridellipsethreeItemModel model =
-                                                  controller
-                                                          .teamChoosingOneModelObj
-                                                          .value
-                                                          .gridellipsethreeItemList[
-                                                      index];
-                                              return GridellipsethreeItemWidget(
-                                                model,
-                                              );
-                                            },
                                           ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: getPadding(
-                                          left: 31,
-                                          top: 31,
-                                          right: 31,
-                                          bottom: 33,
-                                        ),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(
-                                                getHorizontalSize(
-                                                  30.00,
-                                                ),
-                                              ),
-                                              child: CommonImageView(
-                                                imagePath:
-                                                    ImageConstant.imgEllipse35,
-                                                height: getSize(
-                                                  60.00,
-                                                ),
-                                                width: getSize(
-                                                  60.00,
-                                                ),
-                                                fit: BoxFit.cover,
-                                              ),
-                                            ),
-                                            ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(
-                                                getHorizontalSize(
-                                                  30.00,
-                                                ),
-                                              ),
-                                              child: CommonImageView(
-                                                imagePath:
-                                                    ImageConstant.imgEllipse36,
-                                                height: getSize(
-                                                  60.00,
-                                                ),
-                                                width: getSize(
-                                                  60.00,
-                                                ),
-                                                fit: BoxFit.cover,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
