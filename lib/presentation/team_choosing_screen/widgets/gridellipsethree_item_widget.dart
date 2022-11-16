@@ -1,19 +1,17 @@
 import 'package:qatar_pinko_cup/data/models/country_model/country_model.dart';
 
-import '../controller/team_choosing_one_controller.dart';
+import '../controller/team_choosing_controller.dart';
 import '../models/gridellipsethree_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:qatar_pinko_cup/core/app_export.dart';
 
 // ignore: must_be_immutable
 class GridellipsethreeItemWidget extends StatelessWidget {
-  GridellipsethreeItemWidget(this.gridellipsethreeItemModelObj, this.countryModel);
+  GridellipsethreeItemWidget( this.countryModel);
 
   CountryModel countryModel;
 
-  GridellipsethreeItemModel gridellipsethreeItemModelObj;
-
-  var controller = Get.find<TeamChoosingOneController>();
+  var controller = Get.find<TeamChoosingController>();
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +31,7 @@ class GridellipsethreeItemWidget extends StatelessWidget {
                 ),
               ),
               child: CommonImageView(
-                imagePath: countryModel.logo,
+                imagePath: ImageConstant.imgEllipse3,
                 height: getSize(
                   60.00,
                 ),
@@ -51,7 +49,7 @@ class GridellipsethreeItemWidget extends StatelessWidget {
               right: 10,
             ),
             child: Text(
-              countryModel.name,
+              "lbl_qatar".tr,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: AppStyle.txtJosefinSansRomanRegular14,

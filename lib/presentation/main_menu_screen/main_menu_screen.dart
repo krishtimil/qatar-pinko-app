@@ -92,7 +92,7 @@ class MainMenuScreen extends GetWidget<MainMenuController> {
                                     CustomButton(
                                         onTap: () => Navigator.pushNamed(
                                             context,
-                                            AppRoutes.teamChoosingOneScreen),
+                                            AppRoutes.teamChoosingScreen),
                                         width: 277,
                                         text: "lbl_start_game".tr,
                                         margin: getMargin(
