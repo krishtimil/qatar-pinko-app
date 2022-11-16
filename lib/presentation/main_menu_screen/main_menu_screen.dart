@@ -2,6 +2,7 @@ import 'controller/main_menu_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:qatar_pinko_cup/core/app_export.dart';
 import 'package:qatar_pinko_cup/widgets/custom_button.dart';
+import 'package:qatar_pinko_cup/routes/app_routes.dart';
 
 class MainMenuScreen extends GetWidget<MainMenuController> {
   @override
@@ -53,6 +54,7 @@ class MainMenuScreen extends GetWidget<MainMenuController> {
                                                           style: AppStyle
                                                               .txtJosefinSansRomanSemiBold16)),
                                                   CustomButton(
+                                                      onTap: () {},
                                                       width: 119,
                                                       text: "lbl_1_000".tr,
                                                       margin:

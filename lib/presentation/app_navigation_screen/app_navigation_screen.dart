@@ -115,60 +115,6 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapTEAMCHOOSINGOne();
-                                            },
-                                            child: Container(
-                                                width:
-                                                    getHorizontalSize(375.00),
-                                                decoration:
-                                                    AppDecoration.fillWhiteA700,
-                                                child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.min,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Align(
-                                                          alignment: Alignment
-                                                              .centerLeft,
-                                                          child: Padding(
-                                                              padding:
-                                                                  getPadding(
-                                                                      left: 20,
-                                                                      top: 10,
-                                                                      right: 20,
-                                                                      bottom:
-                                                                          10),
-                                                              child: Text(
-                                                                  "msg_team_choosing_o"
-                                                                      .tr,
-                                                                  overflow:
-                                                                      TextOverflow
-                                                                          .ellipsis,
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style: AppStyle
-                                                                      .txtRobotoRegular20))),
-                                                      Align(
-                                                          alignment:
-                                                              Alignment.center,
-                                                          child: Container(
-                                                              height:
-                                                                  getVerticalSize(
-                                                                      1.00),
-                                                              width:
-                                                                  getHorizontalSize(
-                                                                      375.00),
-                                                              margin: getMargin(
-                                                                  top: 5),
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                      color: ColorConstant
-                                                                          .bluegray400)))
-                                                    ]))),
-                                        GestureDetector(
-                                            onTap: () {
                                               onTapTEAMCHOOSING();
                                             },
                                             child: Container(
@@ -330,114 +276,6 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapGAMEPLAYOne();
-                                            },
-                                            child: Container(
-                                                width:
-                                                    getHorizontalSize(375.00),
-                                                decoration:
-                                                    AppDecoration.fillWhiteA700,
-                                                child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.min,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Align(
-                                                          alignment: Alignment
-                                                              .centerLeft,
-                                                          child: Padding(
-                                                              padding:
-                                                                  getPadding(
-                                                                      left: 20,
-                                                                      top: 10,
-                                                                      right: 20,
-                                                                      bottom:
-                                                                          10),
-                                                              child: Text(
-                                                                  "lbl_gameplay_one"
-                                                                      .tr,
-                                                                  overflow:
-                                                                      TextOverflow
-                                                                          .ellipsis,
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style: AppStyle
-                                                                      .txtRobotoRegular20))),
-                                                      Align(
-                                                          alignment:
-                                                              Alignment.center,
-                                                          child: Container(
-                                                              height:
-                                                                  getVerticalSize(
-                                                                      1.00),
-                                                              width:
-                                                                  getHorizontalSize(
-                                                                      375.00),
-                                                              margin: getMargin(
-                                                                  top: 5),
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                      color: ColorConstant
-                                                                          .bluegray400)))
-                                                    ]))),
-                                        GestureDetector(
-                                            onTap: () {
-                                              onTapGAMEPLAYTwo();
-                                            },
-                                            child: Container(
-                                                width:
-                                                    getHorizontalSize(375.00),
-                                                decoration:
-                                                    AppDecoration.fillWhiteA700,
-                                                child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.min,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Align(
-                                                          alignment: Alignment
-                                                              .centerLeft,
-                                                          child: Padding(
-                                                              padding:
-                                                                  getPadding(
-                                                                      left: 20,
-                                                                      top: 10,
-                                                                      right: 20,
-                                                                      bottom:
-                                                                          10),
-                                                              child: Text(
-                                                                  "lbl_gameplay_two"
-                                                                      .tr,
-                                                                  overflow:
-                                                                      TextOverflow
-                                                                          .ellipsis,
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style: AppStyle
-                                                                      .txtRobotoRegular20))),
-                                                      Align(
-                                                          alignment:
-                                                              Alignment.center,
-                                                          child: Container(
-                                                              height:
-                                                                  getVerticalSize(
-                                                                      1.00),
-                                                              width:
-                                                                  getHorizontalSize(
-                                                                      375.00),
-                                                              margin: getMargin(
-                                                                  top: 5),
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                      color: ColorConstant
-                                                                          .bluegray400)))
-                                                    ]))),
-                                        GestureDetector(
-                                            onTap: () {
                                               onTapGAMEPLAY();
                                             },
                                             child: Container(
@@ -489,6 +327,114 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                   BoxDecoration(
                                                                       color: ColorConstant
                                                                           .bluegray400)))
+                                                    ]))),
+                                        GestureDetector(
+                                            onTap: () {
+                                              onTapRESULT();
+                                            },
+                                            child: Container(
+                                                width:
+                                                    getHorizontalSize(375.00),
+                                                decoration:
+                                                    AppDecoration.fillWhiteA700,
+                                                child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                    children: [
+                                                      Align(
+                                                          alignment: Alignment
+                                                              .centerLeft,
+                                                          child: Padding(
+                                                              padding:
+                                                                  getPadding(
+                                                                      left: 20,
+                                                                      top: 10,
+                                                                      right: 20,
+                                                                      bottom:
+                                                                          10),
+                                                              child: Text(
+                                                                  "lbl_result"
+                                                                      .tr,
+                                                                  overflow:
+                                                                      TextOverflow
+                                                                          .ellipsis,
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: AppStyle
+                                                                      .txtRobotoRegular20))),
+                                                      Align(
+                                                          alignment:
+                                                              Alignment.center,
+                                                          child: Container(
+                                                              height:
+                                                                  getVerticalSize(
+                                                                      1.00),
+                                                              width:
+                                                                  getHorizontalSize(
+                                                                      375.00),
+                                                              margin: getMargin(
+                                                                  top: 5),
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                      color: ColorConstant
+                                                                          .bluegray400)))
+                                                    ]))),
+                                        GestureDetector(
+                                            onTap: () {
+                                              onTapSTATS();
+                                            },
+                                            child: Container(
+                                                width:
+                                                    getHorizontalSize(375.00),
+                                                decoration:
+                                                    AppDecoration.fillWhiteA700,
+                                                child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                    children: [
+                                                      Align(
+                                                          alignment: Alignment
+                                                              .centerLeft,
+                                                          child: Padding(
+                                                              padding:
+                                                                  getPadding(
+                                                                      left: 20,
+                                                                      top: 10,
+                                                                      right: 20,
+                                                                      bottom:
+                                                                          10),
+                                                              child: Text(
+                                                                  "lbl_stats"
+                                                                      .tr,
+                                                                  overflow:
+                                                                      TextOverflow
+                                                                          .ellipsis,
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: AppStyle
+                                                                      .txtRobotoRegular20))),
+                                                      Align(
+                                                          alignment:
+                                                              Alignment.center,
+                                                          child: Container(
+                                                              height:
+                                                                  getVerticalSize(
+                                                                      1.00),
+                                                              width:
+                                                                  getHorizontalSize(
+                                                                      375.00),
+                                                              margin: getMargin(
+                                                                  top: 5),
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                      color: ColorConstant
+                                                                          .bluegray400)))
                                                     ])))
                                       ])))))
                 ])));
@@ -496,10 +442,6 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   onTapMainmenu() {
     Get.toNamed(AppRoutes.mainMenuScreen);
-  }
-
-  onTapTEAMCHOOSINGOne() {
-    Get.toNamed(AppRoutes.teamChoosingOneScreen);
   }
 
   onTapTEAMCHOOSING() {
@@ -514,15 +456,15 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
     Get.toNamed(AppRoutes.confirmScreen);
   }
 
-  onTapGAMEPLAYOne() {
-    Get.toNamed(AppRoutes.gameplayOneScreen);
-  }
-
-  onTapGAMEPLAYTwo() {
-    Get.toNamed(AppRoutes.gameplayTwoScreen);
-  }
-
   onTapGAMEPLAY() {
     Get.toNamed(AppRoutes.gameplayScreen);
+  }
+
+  onTapRESULT() {
+    Get.toNamed(AppRoutes.resultScreen);
+  }
+
+  onTapSTATS() {
+    Get.toNamed(AppRoutes.statsScreen);
   }
 }
