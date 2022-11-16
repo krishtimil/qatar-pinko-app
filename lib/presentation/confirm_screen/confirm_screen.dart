@@ -136,6 +136,7 @@ class ConfirmScreen extends GetWidget<ConfirmController> {
                           ),
                         ),
                         CustomButton(
+                          
                           width: 277,
                           text: "msg_confirm_and_sta".tr,
                           margin: getMargin(

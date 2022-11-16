@@ -42,7 +42,7 @@ class GameplayScreen extends GetWidget<GameplayController> {
                         alignment: Alignment.center,
                         child: SingleChildScrollView(
                           padding: getPadding(
-                            left: 9,
+                            left: 0,
                             top: 10,
                           ),
                           child: Container(

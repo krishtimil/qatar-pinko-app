@@ -188,9 +188,10 @@ class TeamChoosingScreen extends GetWidget<TeamChoosingController> {
                                               itemBuilder: (context, index) {
                                                 GridellipsethreeItemModel
                                                     model = controller
-                                                        .teamChoosingModelObj
-                                                        .value
-                                                        .teamChoosingItemList[index];
+                                                            .teamChoosingModelObj
+                                                            .value
+                                                            .teamChoosingItemList[
+                                                        index];
 
                                                 print("flag : $index");
                                                 return GestureDetector(
