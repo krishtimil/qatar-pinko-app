@@ -13,7 +13,7 @@ class AppbarStack extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        onTap!();
+        Navigator.pop(context);
       },
       child: Padding(
         padding: margin ?? EdgeInsets.zero,
@@ -38,7 +38,7 @@ class AppbarStack extends StatelessWidget {
                   ),
                   child: InkWell(
                     onTap: () {
-                      //onTapImgArrowleft();
+                      // onTapImgArrowleft();
                     },
                     child: CommonImageView(
                       svgPath: ImageConstant.imgArrowleft,

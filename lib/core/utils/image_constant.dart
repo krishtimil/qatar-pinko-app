@@ -32,4 +32,6 @@ class ImageConstant {
   static String imgEllipse31 = 'assets/images/img_ellipse3_1.png';
 
   static String imageNotFound = 'assets/images/image_not_found.png';
+
+  static String qatarImage = 'assets/images/img_ellipse3.png';
 }
