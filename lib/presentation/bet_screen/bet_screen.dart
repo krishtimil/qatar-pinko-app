@@ -144,6 +144,8 @@ class BetScreen extends GetWidget<BetController> {
                           ),
                         ),
                         CustomButton(
+                          onTap: () => Navigator.pushNamed(
+                              context, AppRoutes.confirmScreen),
                           width: 277,
                           text: "lbl_next".tr,
                           margin: getMargin(
