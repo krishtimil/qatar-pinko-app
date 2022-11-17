@@ -12,6 +12,8 @@ import 'package:qatar_pinko_cup/widgets/app_bar/appbar_title.dart';
 import 'package:qatar_pinko_cup/widgets/app_bar/custom_app_bar.dart';
 
 class TeamChoosingScreen extends GetWidget<TeamChoosingController> {
+  int? selectedIndex;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -78,7 +80,7 @@ class TeamChoosingScreen extends GetWidget<TeamChoosingController> {
                             children: [
                               GestureDetector(
                                 onTap: () => Navigator.pushNamed(
-                                    context, AppRoutes.mainMenuScreen),
+                                    context, AppRoutes.betScreen),
                                 child: Align(
                                   alignment: Alignment.bottomCenter,
                                   child: Container(
@@ -96,8 +98,17 @@ class TeamChoosingScreen extends GetWidget<TeamChoosingController> {
                                           MainAxisAlignment.start,
                                       children: [
                                         GestureDetector(
-                                          onTap: () => Navigator.pushNamed(
-                                              context, AppRoutes.betScreen),
+                                          onTap: () {
+                                            if (selectedIndex == null) {
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(SnackBar(
+                                                      content: Text(
+                                                          'Please select at least one team')));
+                                            } else {
+                                              Navigator.pushNamed(
+                                                  context, AppRoutes.betScreen);
+                                            }
+                                          },
                                           child: Padding(
                                             padding: getPadding(
                                               left: 94,
@@ -193,18 +204,39 @@ class TeamChoosingScreen extends GetWidget<TeamChoosingController> {
                                                             .teamChoosingItemList[
                                                         index];
 
-                                                print("flag : $index");
-                                                return GestureDetector(
-                                                  child: GridellipsethreeItemWidget(
-                                                      CountryModel(
-                                                          logo: CountriesInfo
-                                                              .countriesInfo[
-                                                                  '${index.toString()}']!
-                                                              .logo,
-                                                          name: CountriesInfo
-                                                              .countriesInfo[
-                                                                  '${index.toString()}']!
-                                                              .name)),
+                                                var model1 =
+                                                    controller.selIndex;
+
+                                                return Container(
+                                                  decoration:
+                                                      model1 ==
+                                                              index
+                                                          ? AppDecoration
+                                                              .fillBlue800
+                                                          : null,
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      GestureDetector(
+                                                        onTap: () {
+                                                          selectedIndex = index;
+                                                          controller.selIndex =
+                                                              index;
+                                                        },
+                                                        child: GridellipsethreeItemWidget(CountryModel(
+                                                            logo: CountriesInfo
+                                                                .countriesInfo[
+                                                                    '${index.toString()}']!
+                                                                .logo,
+                                                            name: CountriesInfo
+                                                                .countriesInfo[
+                                                                    '${index.toString()}']!
+                                                                .name)),
+                                                      ),
+                                                    ],
+                                                  ),
                                                 );
                                               },
                                             ),

@@ -9,42 +9,90 @@ class TeamChoosingItemWidget extends StatelessWidget {
 
   TeamChoosingItemModel teamChoosingItemModelObj;
 
+
   var controller = Get.find<TeamChoosingController>();
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.centerLeft,
-      child: Padding(
-        padding: getPadding(
-          top: 10.5,
-          bottom: 10.5,
-        ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Padding(
-              padding: getPadding(
-                left: 31,
-                top: 10,
-                bottom: 10,
+    return Container(
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: Padding(
+          padding: getPadding(
+            top: 10.5,
+            bottom: 10.5,
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Padding(
+                padding: getPadding(
+                  left: 31,
+                  top: 10,
+                  bottom: 10,
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(
+                          getHorizontalSize(
+                            30.00,
+                          ),
+                        ),
+                        child: CommonImageView(
+                          imagePath: ImageConstant.imgEllipse3,
+                          height: getSize(
+                            60.00,
+                          ),
+                          width: getSize(
+                            60.00,
+                          ),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: getPadding(
+                        left: 10,
+                        top: 9,
+                        right: 10,
+                      ),
+                      child: Text(
+                        "lbl_qatar".tr,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.left,
+                        style: AppStyle.txtJosefinSansRomanRegular14,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: ClipRRect(
+              Padding(
+                padding: getPadding(
+                  left: 77,
+                  top: 10,
+                  right: 31,
+                  bottom: 10,
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    ClipRRect(
                       borderRadius: BorderRadius.circular(
                         getHorizontalSize(
                           30.00,
                         ),
                       ),
                       child: CommonImageView(
-                        imagePath: ImageConstant.imgEllipse3,
+                        imagePath: ImageConstant.imgEllipse360x60,
                         height: getSize(
                           60.00,
                         ),
@@ -54,72 +102,27 @@ class TeamChoosingItemWidget extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: getPadding(
-                      left: 10,
-                      top: 9,
-                      right: 10,
+                    Align(
+                      alignment: Alignment.center,
+                      child: Padding(
+                        padding: getPadding(
+                          left: 4,
+                          top: 9,
+                          right: 3,
+                        ),
+                        child: Text(
+                          "lbl_england".tr,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.left,
+                          style: AppStyle.txtJosefinSansRomanRegular14,
+                        ),
+                      ),
                     ),
-                    child: Text(
-                      "lbl_qatar".tr,
-                      overflow: TextOverflow.ellipsis,
-                      textAlign: TextAlign.left,
-                      style: AppStyle.txtJosefinSansRomanRegular14,
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            Padding(
-              padding: getPadding(
-                left: 77,
-                top: 10,
-                right: 31,
-                bottom: 10,
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(
-                      getHorizontalSize(
-                        30.00,
-                      ),
-                    ),
-                    child: CommonImageView(
-                      imagePath: ImageConstant.imgEllipse360x60,
-                      height: getSize(
-                        60.00,
-                      ),
-                      width: getSize(
-                        60.00,
-                      ),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.center,
-                    child: Padding(
-                      padding: getPadding(
-                        left: 4,
-                        top: 9,
-                        right: 3,
-                      ),
-                      child: Text(
-                        "lbl_england".tr,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.left,
-                        style: AppStyle.txtJosefinSansRomanRegular14,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
