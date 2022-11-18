@@ -1,3 +1,6 @@
+import 'package:qatar_pinko_cup/data/models/args_model/args_model.dart';
+import 'package:qatar_pinko_cup/presentation/gameplay_screen/gameplay_screen.dart';
+
 import 'controller/confirm_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:qatar_pinko_cup/core/app_export.dart';
@@ -7,8 +10,10 @@ import 'package:qatar_pinko_cup/widgets/app_bar/custom_app_bar.dart';
 import 'package:qatar_pinko_cup/widgets/custom_button.dart';
 
 class ConfirmScreen extends GetWidget<ConfirmController> {
+
   @override
   Widget build(BuildContext context) {
+    final betAmount = ModalRoute.of(context)!.settings.arguments as ArgsModel;
     return SafeArea(
       child: Scaffold(
         backgroundColor: ColorConstant.whiteA700,
@@ -120,7 +125,7 @@ class ConfirmScreen extends GetWidget<ConfirmController> {
                               ),
                               CustomButton(
                                 width: 206,
-                                text: "lbl_500".tr,
+                                text: betAmount.betAmount,
                                 margin: getMargin(
                                   left: 51,
                                   top: 9,
@@ -136,7 +141,7 @@ class ConfirmScreen extends GetWidget<ConfirmController> {
                           ),
                         ),
                         CustomButton(
-                          
+                          onTap: () => Navigator.pushNamed(context, AppRoutes.gameplayScreen),
                           width: 277,
                           text: "msg_confirm_and_sta".tr,
                           margin: getMargin(

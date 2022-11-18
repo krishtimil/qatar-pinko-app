@@ -1,6 +1,7 @@
 import 'package:qatar_pinko_cup/data/models/country_model/country_model.dart';
 import 'package:qatar_pinko_cup/data/raw_data/countries_info.dart';
 import 'package:qatar_pinko_cup/presentation/main_menu_screen/main_menu_screen.dart';
+import 'package:qatar_pinko_cup/presentation/team_choosing_screen/controller/tap_controller.dart';
 import 'package:qatar_pinko_cup/presentation/team_choosing_screen/widgets/gridellipsethree_item_widget.dart';
 
 import 'controller/team_choosing_controller.dart';
@@ -13,6 +14,8 @@ import 'package:qatar_pinko_cup/widgets/app_bar/custom_app_bar.dart';
 
 class TeamChoosingScreen extends GetWidget<TeamChoosingController> {
   int? selectedIndex;
+
+  TapController _tapController = TapController();
 
   @override
   Widget build(BuildContext context) {
@@ -205,15 +208,13 @@ class TeamChoosingScreen extends GetWidget<TeamChoosingController> {
                                                         index];
 
                                                 var model1 =
-                                                    controller.selIndex;
+                                                    _tapController.selIndex;
 
                                                 return Container(
-                                                  decoration:
-                                                      model1 ==
-                                                              index
-                                                          ? AppDecoration
-                                                              .fillBlue800
-                                                          : null,
+                                                  decoration: model1 == index
+                                                      ? AppDecoration
+                                                          .fillBlue800
+                                                      : null,
                                                   child: Row(
                                                     mainAxisAlignment:
                                                         MainAxisAlignment
@@ -222,7 +223,7 @@ class TeamChoosingScreen extends GetWidget<TeamChoosingController> {
                                                       GestureDetector(
                                                         onTap: () {
                                                           selectedIndex = index;
-                                                          controller.selIndex =
+                                                          _tapController.selIndex =
                                                               index;
                                                         },
                                                         child: GridellipsethreeItemWidget(CountryModel(

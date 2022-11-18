@@ -1,3 +1,6 @@
+import 'package:qatar_pinko_cup/data/models/args_model/args_model.dart';
+import 'package:qatar_pinko_cup/presentation/confirm_screen/confirm_screen.dart';
+
 import 'controller/bet_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:qatar_pinko_cup/core/app_export.dart';
@@ -7,6 +10,7 @@ import 'package:qatar_pinko_cup/widgets/app_bar/custom_app_bar.dart';
 import 'package:qatar_pinko_cup/widgets/custom_button.dart';
 
 class BetScreen extends GetWidget<BetController> {
+  TextEditingController _betController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -129,23 +133,38 @@ class BetScreen extends GetWidget<BetController> {
                                   style: AppStyle.txtJosefinSansRomanBold25,
                                 ),
                               ),
-                              CustomButton(
-                                width: 206,
-                                text: "lbl_500".tr,
-                                margin: getMargin(
-                                  left: 16,
+                              Expanded(
+                                child: Container(
+                                  margin: getMargin(left: 20),
+                                  child: TextField(
+                                    decoration: InputDecoration(
+                                        border: OutlineInputBorder(),
+                                        hintText: "Place your bet here"),
+                                    controller: _betController,
+                                  ),
                                 ),
-                                variant: ButtonVariant.OutlineGray501,
-                                padding: ButtonPadding.PaddingAll18,
-                                fontStyle: ButtonFontStyle
-                                    .JosefinSansRomanSemiBold16Bluegray901,
                               ),
                             ],
                           ),
                         ),
                         CustomButton(
-                          onTap: () => Navigator.pushNamed(
-                              context, AppRoutes.confirmScreen),
+                          onTap: () {
+                            if (_betController.text.isNotEmpty) {
+                              Navigator.pushNamed(
+                                context,
+                                AppRoutes.confirmScreen,
+                                arguments: ArgsModel(
+                                  betAmount: _betController.text,
+                                ),
+                              );
+                            } else {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text('Please enter your bet amount'),
+                                ),
+                              );
+                            }
+                          },
                           width: 277,
                           text: "lbl_next".tr,
                           margin: getMargin(
