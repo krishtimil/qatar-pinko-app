@@ -1,8 +1,10 @@
+import 'package:provider/provider.dart';
 import 'package:qatar_pinko_cup/data/models/country_model/country_model.dart';
 import 'package:qatar_pinko_cup/data/raw_data/countries_info.dart';
 import 'package:qatar_pinko_cup/presentation/main_menu_screen/main_menu_screen.dart';
 import 'package:qatar_pinko_cup/presentation/team_choosing_screen/controller/tap_controller.dart';
 import 'package:qatar_pinko_cup/presentation/team_choosing_screen/widgets/gridellipsethree_item_widget.dart';
+import 'package:qatar_pinko_cup/provider/team_selection_provider/team_selection_provider.dart';
 
 import 'controller/team_choosing_controller.dart';
 import 'models/gridellipsethree_item_model.dart';
@@ -19,6 +21,7 @@ class TeamChoosingScreen extends GetWidget<TeamChoosingController> {
 
   @override
   Widget build(BuildContext context) {
+    var prov = Provider.of<TeamSelectionProvider>(context);
     return SafeArea(
       child: Scaffold(
         backgroundColor: ColorConstant.whiteA700,
@@ -207,8 +210,7 @@ class TeamChoosingScreen extends GetWidget<TeamChoosingController> {
                                                             .teamChoosingItemList[
                                                         index];
 
-                                                var model1 =
-                                                    _tapController.selIndex;
+                                                var model1 = prov.selectedTeam;
 
                                                 return Container(
                                                   decoration: model1 == index
@@ -223,8 +225,8 @@ class TeamChoosingScreen extends GetWidget<TeamChoosingController> {
                                                       GestureDetector(
                                                         onTap: () {
                                                           selectedIndex = index;
-                                                          _tapController.selIndex =
-                                                              index;
+                                                          prov.setSelectedTeam(
+                                                              index);
                                                         },
                                                         child: GridellipsethreeItemWidget(CountryModel(
                                                             logo: CountriesInfo
